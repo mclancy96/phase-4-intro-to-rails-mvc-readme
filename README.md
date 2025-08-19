@@ -84,7 +84,10 @@ You can add as many routes as you need to support your app’s features. Check t
 
 ---
 
+
 ## How Views Are Rendered
+
+In Rails, most controller actions have a corresponding view file. By default, after a controller action runs, Rails will automatically look for a view template that matches the action’s name and the controller’s folder. For example, the `index` action in `WelcomeController` will try to render `app/views/welcome/index.html.erb` unless you tell it to do something different (like redirect or render a different template).
 
 Let’s see what happens when you visit your site’s root URL:
 1. The browser sends a request to `/`.
@@ -98,7 +101,7 @@ Let’s see what happens when you visit your site’s root URL:
 Browser → Controller (Welcome#index) → Model (if needed) → View (index.html.erb) → Browser
 ```
 
-If your controller action needs data from the database, it can ask the model for it and pass it to the view.
+If your controller action needs data from the database, it can ask the model for it and pass it to the view. If you want to render a different view or perform a redirect, you can do so explicitly in your controller action.
 
 ---
 
